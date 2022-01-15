@@ -17,3 +17,6 @@ Route::get('/', function () {
     return view('Login');
 });
 
+Route::get('/produse', function() {
+    return view ('playstation5');
+});

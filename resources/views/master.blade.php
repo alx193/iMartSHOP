@@ -32,7 +32,7 @@
 </body>
 <style>
     .custom-login{
-        height: 500px;
+        height: 600px;
         padding-top: 100px;
     }
 
