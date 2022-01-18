@@ -11,3 +11,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+
+// public function show()
+// {
+//     $products = DB::table('products')->get();
+//     return view ('showproducts', ['products'=>$products]);
+// }

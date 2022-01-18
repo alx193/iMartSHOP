@@ -24,8 +24,10 @@ Route::get('/login', function () {
 });
 
 Route::get('/produse', function() {
-    return view ('playstation5');
+    return view ('produse');
 });
 
 Route::post("/login" ,[UserController::class, 'login']);
-Route::get("/" ,[ProductController::class, 'index']);
+// Route::get("/" ,[ProductController::class, 'index']);
+
+Route::resource('products', ProductControllers::class);
