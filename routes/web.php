@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductssController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,19 +16,20 @@ use App\Http\Controllers\ProductController;
 */
 
 
-// Route::get('/', function () {
-//     dd('BUN VENIT !!');
-// });
+Route::get('/', function () {
+    dd('BUN VENIT !!');
+});
 
 Route::get('/login', function () {
     return view('Login');
 });
 
+Route::post("/login" ,[UserController::class, 'login']);
+Route::get("/" ,[ProductssController::class, 'index']);
+
+
 Route::get('/produse', function() {
     return view ('produse');
 });
-
-Route::post("/login" ,[UserController::class, 'login']);
-// Route::get("/" ,[ProductController::class, 'index']);
 
 Route::resource('products', ProductControllers::class);

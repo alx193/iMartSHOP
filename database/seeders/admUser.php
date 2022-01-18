@@ -16,8 +16,8 @@ class admUser extends Seeder
     {
         DB::table('users')->insert([
             'name'=>'alex',
-            'email'=>'alex@qa.com',
-            'password'=>'1234'
+            'e-mail'=>'alex@qa.com',
+            'password'=>'0000'
         ]);
     }
 }
