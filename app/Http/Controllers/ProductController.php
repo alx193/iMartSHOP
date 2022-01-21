@@ -12,7 +12,8 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+     public function index()
     {
         $products = Product::latest()->paginate(5);
 
@@ -38,22 +39,35 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+       // dd('start');
         $request->validate ([
-            'Id'   => 'required',
-            'name' => 'required',
-            'PRET' => 'required',
-            'GREUTATE' => 'required',
-            'DESCRIERE' => 'required',
-            'CATEGORIE' => 'required',
-            'CREATE_DATE' => 'required',
-            'STOCK' => 'required',
+             'Name' => 'required',
+             'Price' => 'required',
+             'Weight' => 'required',
+             'Description' => 'required',
+             'Category' => 'required',
+             'Stock' => 'required',
         ]);
-            Product::create($request->all());
+            // dd($request->all());
+        // Product::create($request->only('Name','Price', 'Weight', 'Description', 'Category', 'CREATED_AT', 'STOCK'));
+   
+        $product = new Product();
+        $product->Name = $request->Name;
+        $product->Price = $request->Price;
+        $product->Weight = $request->Weight;
+        $product->Description = $request->Description;
+        $product->Category = $request->Category;
+        $product->Stock = $request->Stock;
+        //$game->publisher = $request->publisher;
+      //  $game->releasedate = $request->releasedate;
+        //$game->image = $imageName;
+        $product->save();
 
+     //   dd("sunt un produs", $product);
+      //  dd('aaa');
             return redirect()->route('products.index')
-                            ->with('success', "Product created successfully!");
-
-        
+                            ->with('success', "Product created successfully!");  
     }
 
     /**
@@ -64,7 +78,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', compact('products'));
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -75,7 +89,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', compact('products'));
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -87,19 +101,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        // dd('aici');
         $request->validate ([
-            'Id'   => 'required',
-            'name' => 'required',
-            'PRET' => 'required',
-            'GREUTATE' => 'required',
-            'DESCRIERE' => 'required',
-            'CATEGORIE' => 'required',
-            'CREATE_DATE' => 'required',
-            'STOCK' => 'required',
+            // 'id'   => 'required',
+            'Name' => 'required',
+            'Price' => 'required',
+            'Weight' => 'required',
+            'Description' => 'required',
+            'Category' => 'required',
+            // 'CREATED_AT' => 'required',
+            'Stock' => 'required',
         ]);
-
+        // dd('am trecut de validare');
         $product->update($request->all());
-
+        // dd('am trecut de update :)');
         return redirect()->route('products.index')
                         ->with('success', 'Product updated successfully!');
     }

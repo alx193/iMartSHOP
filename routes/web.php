@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductssController;
+use App\Http\Controllers\CategoriesController;
+
+
+// use App\Http\Controllers\ProductssController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,20 +19,29 @@ use App\Http\Controllers\ProductssController;
 */
 
 
+// Route::get('/', function () {
+//     dd('BUN VENIT !!');
+// });
+
+// Route::get('/login', function () {
+//     return view('Login');
+// });
+
+// Route::post("/login" ,[UserController::class, 'login']);
+// Route::get("/" ,[ProductssController::class, 'index']);
+
+
+// Route::get('/produse', function() {
+//     return view ('produse');
+// });
+
+
 Route::get('/', function () {
-    dd('BUN VENIT !!');
+    return view('home');
 });
 
-Route::get('/login', function () {
-    return view('Login');
-});
+Route::resource('products', ProductController::class);
 
-Route::post("/login" ,[UserController::class, 'login']);
-Route::get("/" ,[ProductssController::class, 'index']);
+Route::resource('categories', CategoriesController::class);
 
 
-Route::get('/produse', function() {
-    return view ('produse');
-});
-
-Route::resource('products', ProductControllers::class);
