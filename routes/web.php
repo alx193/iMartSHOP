@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoriesController;
-
+use App\Http\Controllers\Order_DetailsController;
 
 // use App\Http\Controllers\ProductssController;
 /*
@@ -44,4 +44,5 @@ Route::resource('products', ProductController::class);
 
 Route::resource('categories', CategoriesController::class);
 
+Route::resource('orders', OrdersController::class);
 
