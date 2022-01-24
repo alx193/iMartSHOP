@@ -12,17 +12,6 @@
         </div>
     </div>
 
-    {{-- @if ($errors->any())
-        <div class="alert alert-warning">
-            <strong>Warning!</strong>There area some problmes with your input!<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif --}}
-
     <form action="{{ route('products.update',$product->id) }}" method="POST">
         @csrf
         @method('PUT')

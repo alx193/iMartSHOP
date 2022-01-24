@@ -5,9 +5,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\CustomersController;
-
+use App\Http\Controllers\UserController;
 // use App\Http\Controllers\ProductssController;
-// use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +24,7 @@ use App\Http\Controllers\CustomersController;
 //     dd('BUN VENIT !!');
 // });
 
-// Route::get('/login', function () {
-//     return view('Login');
-// });
+
 
 // Route::post("/login" ,[UserController::class, 'login']);
 // Route::get("/" ,[ProductssController::class, 'index']);
@@ -48,4 +46,10 @@ Route::resource('categories', CategoriesController::class);
 Route::resource('orders', OrdersController::class);
 
 Route::resource('customers', CustomersController::class);
+
+
+Route::post("/login" ,[UserController::class, 'login']);
+Route::get('/login', function () {
+    return view('Login');
+});
 

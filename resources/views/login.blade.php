@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layout')
 @section('content')
 <body>
 <div class="container custom-login">
