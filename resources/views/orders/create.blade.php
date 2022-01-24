@@ -1,42 +1,42 @@
-@extends('order_details.layout')
+@extends('orders.layout')
   
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Order Detail</h2>
+            <h2>Add New Order</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('order_details.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('orders.index') }}"> Back</a>
         </div>
     </div>
 </div>
-<form action="{{ route('order_details.store') }}" method="POST">
+<form action="{{ route('orders.store') }}" method="POST">
     @csrf
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>order_id:</strong>
-                <input type="text" name="order_id" class="form-control" placeholder="order_id">
+                <strong>customer_id:</strong>
+                <input type="text" name="customer_id" class="form-control" placeholder="customer_id">
             </div>
         </div>
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>product_id:</strong>
-                <input type="text" name="product_id" class="form-control" placeholder="product_id">
+                <strong>ammount:</strong>
+                <input type="text" name="ammount" class="form-control" placeholder="ammount">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>price:</strong>
-                <input type="text" name="price" class="form-control" placeholder="price">
+                <strong>address:</strong>
+                <input type="text" name="address" class="form-control" placeholder="address">
             </div>
         </div>
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>quantity:</strong>
-                <input type="text" name="quantity" class="form-control" placeholder="quantity">
+                <strong>status:</strong>
+                <input type="text" name="status" class="form-control" placeholder="status">
             </div>
         </div>
         {{-- Buton de submit --}}
