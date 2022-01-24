@@ -15,9 +15,9 @@ class admUser extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name'=>'alex',
-            'e-mail'=>'alex@qa.com',
-            'password'=>'0000'
+            'name'=>'mihai',
+            'email'=>'mihai@qa.com',
+            'password'=>Hash::make('1234')
         ]);
     }
 }

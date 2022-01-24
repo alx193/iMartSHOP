@@ -53,3 +53,10 @@ Route::get('/login', function () {
     return view('Login');
 });
 
+Route::get('/logout', function (){
+    Session::forget('user');
+    return redirect('login');
+});
+
+Route::view('/register','register');
+Route::post('/register', [UserController::class, 'register']);
