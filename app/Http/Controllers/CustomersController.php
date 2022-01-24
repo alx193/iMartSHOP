@@ -58,7 +58,8 @@ class CustomersController extends Controller
         $customer->phone = $request->phone;
         $customer->save();
 
-        return redirect()route('customers.index')
+        return redirect()->route('customers.index')
+                        ->with('success', 'Customer created successfully!');
     }
 
     /**
@@ -78,7 +79,7 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customers $customers)
+    public function edit(Customers $customer)
     {
         return view('customers.edit', compact('customer'));
     }
@@ -119,6 +120,6 @@ class CustomersController extends Controller
         $customer->delete();
 
         return redirect()->route('customers.index')
-                        ->('success', 'Customer deleted successfully!');
+                        ->with('success', 'Customer deleted successfully!');
     }
 }
