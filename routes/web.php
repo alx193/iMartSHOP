@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\CustomersController;
 
 // use App\Http\Controllers\ProductssController;
+// use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

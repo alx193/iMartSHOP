@@ -14,7 +14,10 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customers::latest()->paginate(10);
+
+        return view('customers.index', compact('customers'))
+            ->with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -24,7 +27,7 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
     /**
@@ -35,7 +38,27 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate ([
+            'email'=>'required',
+            'password'=>'required',
+            'full_name'=>'required',
+            'billing_address'=>'required',
+            'shipping_address'=>'required',
+            'country'=>'required',
+            'phone'=>'required',
+        ]);
+
+        $customer = new Customers();
+        $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->full_name = $request->full_name;
+        $customer->billing_address = $request->billing_address;
+        $customer->shipping_address = $request->shipping_address;
+        $customer->country = $request->country;
+        $customer->phone = $request->phone;
+        $customer->save();
+
+        return redirect()route('customers.index')
     }
 
     /**
@@ -44,9 +67,9 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function show(Customers $customers)
+    public function show(Customers $customer)
     {
-        //
+        return view('customers.show', compact('customer'));
     }
 
     /**
@@ -57,7 +80,7 @@ class CustomersController extends Controller
      */
     public function edit(Customers $customers)
     {
-        //
+        return view('customers.edit', compact('customer'));
     }
 
     /**
@@ -67,9 +90,22 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customers $customers)
+    public function update(Request $request, Customers $customer)
     {
-        //
+        $request->validate ([
+            'email'=>'required',
+            'password'=>'required',
+            'full_name'=>'required',
+            'billing_address'=>'required',
+            'shipping_address'=>'required',
+            'country'=>'required',
+            'phone'=>'required',
+        ]);
+
+        $customer->update($request->all());
+
+        return redirect()->route('customers.index')
+                        ->with('success', 'Customer updated successfully!');
     }
 
     /**
@@ -78,8 +114,11 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customers $customers)
+    public function destroy(Customers $customer)
     {
-        //
+        $customer->delete();
+
+        return redirect()->route('customers.index')
+                        ->('success', 'Customer deleted successfully!');
     }
 }
