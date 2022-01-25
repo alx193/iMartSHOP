@@ -54,18 +54,19 @@
                 <input type="text" name="Category" class="form-control" placeholder="Select Category">
             </div>
         </div>
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>CREATED_AT:</strong>
-                <input type="text" name="CREATED_AT" class="form-control" placeholder="CREATED_AT">
-            </div> --}}
-        {{-- </div> --}}
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Stock:</strong>
                 <input type="text" name="Stock" class="form-control" placeholder="Stock">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <input type="text" name="Image" class="form-control" placeholder="Image">
+            </div> 
+        {{-- </div>
         {{-- Buton de submit --}}
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -132,4 +133,20 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success', 'Product deleted successfully!');
     }
+
+    function addtoCart(Request $req)
+    {
+        if($req->session()->has('user'))
+        {
+            $cart = new Cart;
+            $cart->user_id=$req->session()->post('user')['id'];
+            $cart->product_id=$req->product_id;
+            $cart->save();
+            return redirect('/home');
+        }
+        else{
+            return redirect('/login');
+        }
+    }
+
 }

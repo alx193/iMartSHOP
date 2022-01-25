@@ -21,6 +21,7 @@
         <th>Description</th>
         <th>Category</th>
         <th>Stock</th>
+        <th>Image</th>
         <th width="300px">Action</th>
     </tr>
 @foreach ($products as $product)
@@ -31,8 +32,8 @@
         <td>{{ $product->Weight }}</td>
         <td>{{ $product->Description }}</td>
         <td>{{ $product->Category }}</td>
-        {{-- <td>{{ $product->CREATED_AT }}</td> --}}
         <td>{{ $product->Stock }}</td>
+        <td>{{ $product->Image }}</td>
         <td>
             <form action="{{ route('products.destroy', $product->id) }}" method="POST">
 

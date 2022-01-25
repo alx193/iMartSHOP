@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 // use App\Http\Controllers\ProductssController;
 
 /*
@@ -60,3 +61,5 @@ Route::get('/logout', function (){
 
 Route::view('/register','register');
 Route::post('/register', [UserController::class, 'register']);
+
+Route::post("/add_to_cart", [ProductController::class, 'addToCart']);

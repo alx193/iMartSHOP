@@ -34,5 +34,8 @@
                 {{  $category->Thumbnail  }}
             </div>
         </div>
+
+        
+
     </div>
 @endsection

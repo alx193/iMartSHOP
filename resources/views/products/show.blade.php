@@ -40,5 +40,23 @@
                 {{  $product->Price  }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                {{  $product->Image  }}
+            </div>
+        </div>
+
+        <br><br>
+        <form action="add_to_cart" method="POST">
+        @csrf
+        @method('PUT')
+            <input type="hidden" name="product_id" value={{ $product['id'] }}>
+         <button class="btn btn-primary">Add to cart</button>
+        </form>  
+        <br><br> 
+        <button class="btn btn-success">Buy Now</button>
+        <br><br>
+
     </div>
 @endsection
