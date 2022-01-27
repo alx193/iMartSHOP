@@ -6,7 +6,6 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\UserController;
-// use App\Http\Controllers\ProductssController;
 
 /*
 |--------------------------------------------------------------------------
