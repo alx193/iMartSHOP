@@ -16,10 +16,10 @@ class ProductController extends Controller
     
      public function index()
     {
-        $products = Product::latest()->paginate(5);
+        $products = Product::latest()->paginate(10);
 
         return view('products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) -1) * 5);
+            ->with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -40,7 +40,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+
        // dd('start');
         $request->validate ([
              'Name' => 'required',
@@ -50,9 +50,7 @@ class ProductController extends Controller
              'Category' => 'required',
              'Stock' => 'required',
         ]);
-            // dd($request->all());
-        // Product::create($request->only('Name','Price', 'Weight', 'Description', 'Category', 'CREATED_AT', 'STOCK'));
-   
+            
         $product = new Product();
         $product->Name = $request->Name;
         $product->Price = $request->Price;
@@ -133,20 +131,4 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success', 'Product deleted successfully!');
     }
-
-    function addtoCart(Request $req)
-    {
-        if($req->session()->has('user'))
-        {
-            $cart = new Cart;
-            $cart->user_id=$req->session()->post('user')['id'];
-            $cart->product_id=$req->product_id;
-            $cart->save();
-            return redirect('/home');
-        }
-        else{
-            return redirect('/login');
-        }
-    }
-
 }

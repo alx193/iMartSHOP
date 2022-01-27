@@ -29,8 +29,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Thumbnail:</strong>
-                <input type="text" name="Thumbnail" class="form-control" placeholder="Thumbnail">
+                <strong>Stock:</strong>
+                <input type="text" name="Stock" class="form-control" placeholder="Stock">
             </div>
         </div>
         {{-- Buton de submit --}}

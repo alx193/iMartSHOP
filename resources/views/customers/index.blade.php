@@ -14,9 +14,9 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>Email</th>
-        <th>Password</th>
+        <th>No.</th>
         <th>Full Name</th>
+        <th>Email</th>
         <th>Billing Address</th>
         <th>Shipping Address</th>
         <th>Country</th>
@@ -25,10 +25,9 @@
     </tr>
 @foreach ($customers as $customer)
     <tr>
-        {{-- <td>{{ ++$i }}</td> --}}
-        <td>{{ $customer->email }}</td>
-        <td>{{ $customer->password }}</td>
+        <td>{{ ++$i }}</td>
         <td>{{ $customer->full_name }}</td>
+        <td>{{ $customer->email }}</td>
         <td>{{ $customer->billing_address }}</td>
         <td>{{ $customer->shipping_address }}</td>
         <td>{{ $customer->country }}</td>

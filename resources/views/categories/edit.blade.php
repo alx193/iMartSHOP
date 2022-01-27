@@ -31,8 +31,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Thumbnail:</strong>
-                    <input type="text" name="Thumbnail" value="{{ $category->Thumbnail }}" class="form-control" placeholder="Thumbnail">
+                    <strong>Stock:</strong>
+                    <input type="text" name="Stock" value="{{ $category->Stock }}" class="form-control" placeholder="Stock">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

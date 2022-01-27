@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->text("Category");
             $table->timestamp("CREATE_DATE");
             $table->text("STOCK");
-            $table->string("Image");
         });
     }
 

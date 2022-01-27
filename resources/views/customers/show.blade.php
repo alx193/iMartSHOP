@@ -14,24 +14,19 @@
 
     <div class="row">
        
-       <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>email:</strong>
-                {{  $customer->email  }}
-            </div>
-        </div>       
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-            <strong>Password:</strong>
-            {{  $customer->password  }}
-            </div>
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Full Name:</strong>
                 {{  $customer->full_name  }}
             </div>
         </div>
+       <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>email:</strong>
+                {{  $customer->email  }}
+            </div>
+        </div>       
+    
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Billing Address:</strong>

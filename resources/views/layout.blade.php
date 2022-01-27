@@ -8,7 +8,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body class="center">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -32,18 +32,22 @@
             <a class="nav-link" href="{{ route('customers.index') }}">Customers</a>
           </li>
         </ul>
-        @if(Session::has('user'))
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" href="#">{{Session::get('user')['name']}}
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li><a href="/logout">Logout</a></li>
-                </ul>
-             </li>
-          @else
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
-          @endif
+          
+                @if(Session::has('user'))
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" href="#">{{Session::get('user')['name']}}
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a href="/logout">Logout</a></li>
+                      </ul>
+                      </li>
+                @else
+                          <div style="margin-left: 790px; display: inline-flex; margin-bottom: 10px; margin-top: -10px;">
+                          <li><a href="/login" >Login</a></li>
+                          <li style="margin-left: 10px;"><a href="/register">Register</a></li>
+                          </div>
+                @endif
+      
         </ul>
       </div>
     </div>
@@ -51,7 +55,7 @@
   
 
 
-  <div class="container">
+  <div style="margin-bottom: 50px;">
     @yield('content')
   </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>

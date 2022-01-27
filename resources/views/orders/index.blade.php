@@ -1,4 +1,4 @@
-@extends('orders.layout')
+@extends('categories.layout')
 
 @section('content')
     <div class="row">
@@ -14,10 +14,10 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>customer_id</th>
-        <th>ammount</th>
-        <th>address</th>
-        <th>status</th>
+        <th>Customer Name</th>
+        <th>Ammount</th>
+        <th>Address</th>
+        <th>Status</th>
         <th width="300px">Action</th>
     </tr>
 @foreach ($orders as $order)

@@ -14,31 +14,29 @@
 
     <div class="row">
        
-       {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+       <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>costumer_id:</strong>
-                {{  $orders->costumer_id  }}
+                <strong>Costumer Name:</strong>
+                {{  $order->customer_id  }}
             </div>
-        </div> --}}
-       
-       
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            <strong>ammount:</strong>
+            <strong>Ammount:</strong>
             {{  $order->ammount  }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>address:</strong>
+                <strong>Address:</strong>
                 {{  $order->address  }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>status:</strong>
+                <strong>Status:</strong>
                 {{  $order->status  }}
-            </div>
+        </div>
         </div>
     </div>
 @endsection

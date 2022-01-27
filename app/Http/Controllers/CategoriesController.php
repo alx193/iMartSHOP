@@ -14,10 +14,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categories::latest()->paginate(5);
+        $categories = Categories::latest()->paginate(10);
 
         return view('categories.index',compact('categories'))
-            ->with('i', (request()->input('page', 1) -1) * 5);
+            ->with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -41,13 +41,13 @@ class CategoriesController extends Controller
         $request->validate ([
             'Name'=>'required',
             'Description'=>'required',
-            'Thumbnail'=>'required',
+            'Stock'=>'required',
         ]);
 
         $category = new Categories();
         $category->Name = $request->Name;
         $category->Description = $request->Description;
-        $category->Thumbnail = $request->Thumbnail;
+        $category->Stock = $request->Stock;
         $category->save();
 
         return redirect()->route('categories.index')
@@ -88,7 +88,7 @@ class CategoriesController extends Controller
         $request->validate ([
             'Name' => 'required',
             'Description' => 'required',
-            'Thumbnail' => 'required',
+            'Stock' => 'required',
         ]);
         // dd('am trecut de validare');
         $category->update($request->all());

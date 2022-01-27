@@ -16,7 +16,7 @@
     <tr>
         <th>Category Name</th>
         <th>Description</th>
-        <th>Thumbnail</th>
+        <th>Stock</th>
         <th width="300px">Action</th>
     </tr>
 @foreach ($categories as $category)
@@ -24,7 +24,7 @@
         {{-- <td>{{ ++$i }}</td> --}}
         <td>{{ $category->Name }}</td>
         <td>{{ $category->Description }}</td>
-        <td>{{ $category->Thumbnail }}</td>
+        <td>{{ $category->Stock }}</td>
         <td>
             <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
 

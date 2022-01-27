@@ -1,2 +1,0 @@
-@extends('layout')
-@method('PUT')
