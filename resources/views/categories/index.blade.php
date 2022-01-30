@@ -14,6 +14,7 @@
 
 <table class="table table-bordered">
     <tr>
+        <th>No.</th>
         <th>Category Name</th>
         <th>Description</th>
         <th>Stock</th>
@@ -21,7 +22,7 @@
     </tr>
 @foreach ($categories as $category)
     <tr>
-        {{-- <td>{{ ++$i }}</td> --}}
+        <td>{{ ++$i }}</td>
         <td>{{ $category->Name }}</td>
         <td>{{ $category->Description }}</td>
         <td>{{ $category->Stock }}</td>

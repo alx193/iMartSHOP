@@ -11,5 +11,4 @@
 <div class="uper">
                                                         Welcome to iMartSHOP!!!
 <div>
-{{-- <img src="/images/cool-background.png" alt="background image"/></div> --}}
 @endsection
